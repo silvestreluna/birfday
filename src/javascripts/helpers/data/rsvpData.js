@@ -18,4 +18,9 @@ const getrsvpsByBirthdayId = birthdayId => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getrsvpsByBirthdayId };
+// post takes two input - path and item to post
+const addRsvp = rsvp => axios.post(`${firebaseUrl}/rsvps.json`, rsvp);
+
+const editRsvp = (rsvpId, rsvpObj) => axios.put(`${firebaseUrl}/rsvps/${rsvpId}.json`, rsvpObj);
+
+export default { getrsvpsByBirthdayId, addRsvp, editRsvp };
