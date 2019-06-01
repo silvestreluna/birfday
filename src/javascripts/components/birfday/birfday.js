@@ -2,7 +2,7 @@ import util from '../../helpers/util';
 import birfdayData from '../../helpers/data/birfdayData';
 
 const birfdayPrint = (uid) => {
-  birfdayData.getBirdfdayByUid(uid).then((birthday) => {
+  birfdayData.getBirfdayByUid(uid).then((birthday) => {
     let printItem = `<h1>${birthday.date}</h1>`;
     printItem += `<img src=${birthday.imageUrl} alt="bday location" />`;
     printItem += `<h2>${birthday.location} @ ${birthday.time}</h2>`;
