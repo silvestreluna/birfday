@@ -3,7 +3,7 @@ import apiKeys from '../apiKeys.json';
 
 const firebaseUrl = apiKeys.firebaseKeys.databaseURL;
 
-const getBirdfdayByUid = uid => new Promise((resolve, reject) => {
+const getBirfdayByUid = uid => new Promise((resolve, reject) => {
   axios.get(`${firebaseUrl}/birthdays.json?orderBy="uid"&equalTo="${uid}"`)
     .then((results) => {
       const birthdayResults = results.data;
@@ -17,4 +17,4 @@ const getBirdfdayByUid = uid => new Promise((resolve, reject) => {
     .catch(err => reject(err));
 });
 
-export default { getBirdfdayByUid };
+export default { getBirfdayByUid };
